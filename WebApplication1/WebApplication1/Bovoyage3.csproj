@@ -138,12 +138,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AgenceVoyagesController.cs" />
     <Compile Include="Controllers\AssuranceAnulationsController.cs" />
-    <Compile Include="Controllers\AssurancesController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\DestinationsController.cs" />
     <Compile Include="Controllers\DossierReservationsController.cs" />
     <Compile Include="Controllers\ParticipantsController.cs" />
-    <Compile Include="Controllers\PersonnesController.cs" />
     <Compile Include="Controllers\VoyagesController.cs" />
     <Compile Include="Data\Bovoyage3DbContext.cs" />
     <Compile Include="Global.asax.cs">

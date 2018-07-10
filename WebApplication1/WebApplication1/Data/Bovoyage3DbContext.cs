@@ -10,13 +10,11 @@ namespace Bovoyage3.Data
 {
     public class Bovoyage3DbContext: DbContext
     {
-        public Bovoyage3DbContext() : base("bovoyage3") { }
+        public Bovoyage3DbContext() : base("bovoyage3Azure") { }
             
         public DbSet<Participant> Participants { get; set; }
 
         public DbSet<Client> Clients { get; set; }
-
-        public DbSet<Assurance> Assurances { get; set; }
 
         public DbSet<AgenceVoyage> AgenceVoyages { get; set; }
 
@@ -26,8 +24,8 @@ namespace Bovoyage3.Data
 
         public DbSet<Voyage> Voyages { get; set; }
 
-        public System.Data.Entity.DbSet<Bovoyage3.Models.Personne> Personnes { get; set; }
 
-        public System.Data.Entity.DbSet<Bovoyage3.Models.AssuranceAnulation> AssuranceAnulations { get; set; }
+
+        public DbSet<AssuranceAnulation> AssuranceAnulations { get; set; }
     }
 }
