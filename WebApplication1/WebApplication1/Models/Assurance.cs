@@ -8,6 +8,9 @@ namespace WebApplication1.Models
 {
     public class Assurance
     {
+        public int Id { get; set; }
+
+        public string Designation { get; set; }
 
     }
 }
