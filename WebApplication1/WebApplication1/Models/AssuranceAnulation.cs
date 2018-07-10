@@ -9,6 +9,6 @@ namespace Bovoyage3.Models
 {
     public class AssuranceAnulation : Assurance
     {
-
+        public int NumeroPolice { get; set; }
     }
 }
