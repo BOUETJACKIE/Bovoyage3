@@ -5,9 +5,11 @@ using System.Web;
 
 namespace Bovoyage3.Models
 {
-    public class Participant : Personne
+    public class DossierReservation
     {
         public int NumeroUnique { get; set; }
-        public float Reduction { get; set; }
+        public string NumeroCarteBancaire { get; set; }
+        public decimal PrixTotal { get; set; }
+
     }
 }
