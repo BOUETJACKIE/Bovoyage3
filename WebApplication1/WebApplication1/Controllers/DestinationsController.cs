@@ -36,6 +36,18 @@ namespace Bovoyage3.Controllers
             return Ok(destination);
         }
 
+        /// <summary>
+        /// Ajoute une destination dans la base. Le nom est obligatoire
+        /// </summary>
+        /// <param pays="Destination"></param>
+        /// <returns></returns>
+        [Route("{pays}")]
+        [ResponseType(typeof(Destination))]
+        public IQueryable<Destination> GetDestination(string pays)
+        {
+            return db.Destinations.Where(x => x.Pays.Contains(pays));
+        }
+
         // PUT: api/Destinations/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutDestination(int id, Destination destination)
