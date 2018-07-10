@@ -18,6 +18,10 @@ namespace Bovoyage3.Controllers
         private Bovoyage3DbContext db = new Bovoyage3DbContext();
 
         // GET: api/Destinations
+        // GET: api/Participants
+        /// <summary>
+        /// Retourne la liste des Destinations
+        /// </summary>    
         public IQueryable<Destination> GetDestinations()
         {
             return db.Destinations;
@@ -46,6 +50,49 @@ namespace Bovoyage3.Controllers
         public IQueryable<Destination> GetDestination(string pays)
         {
             return db.Destinations.Where(x => x.Pays.Contains(pays));
+        }
+
+        // GET: api/destination/search
+        [Route("api/destination/search")]
+        public IHttpActionResult GetSearch(string continent = "", int? destinationId = null, string pays ="", string region ="", string description ="")
+        {
+            var query = db.Destinations.Where(x => !x.Deleted);
+
+            if (!string.IsNullOrWhiteSpace(continent))
+                query = query.Where(x => x.Continent.Contains(continent));
+
+            Destination destination = db.Destinations.Find(destinationId);
+            if (destinationId == null)
+            {
+                return NotFound();
+            }
+
+            if (destination.Id != destination.Id)
+            {
+                return BadRequest();
+            }
+
+            if (!string.IsNullOrWhiteSpace(pays))
+                query = query.Where(x => x.Pays.Contains(pays));
+            if (pays == null)
+            {
+                return NotFound();
+            }
+            if (!string.IsNullOrWhiteSpace(region))
+                query = query.Where(x => x.Region.Contains(region));
+            if(region == null)
+            {
+                return NotFound();
+            }
+
+            if (!string.IsNullOrWhiteSpace(description))
+                query = query.Where(x => x.Description.Contains(description));
+            if (description == null)
+            {
+                return NotFound();
+            }
+
+            return Ok();
         }
 
         // PUT: api/Destinations/5

@@ -18,6 +18,10 @@ namespace Bovoyage3.Controllers
         private Bovoyage3DbContext db = new Bovoyage3DbContext();
 
         // GET: api/Voyages
+        // GET: api/Participants
+        /// <summary>
+        /// Retourne la liste des Voyages
+        /// </summary>    
         public IQueryable<Voyage> GetVoyages()
         {
             return db.Voyages.Include(x=>x.Destination).Where(x=>!x.Deleted);

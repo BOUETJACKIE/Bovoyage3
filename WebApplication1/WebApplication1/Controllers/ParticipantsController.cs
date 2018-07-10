@@ -18,11 +18,14 @@ namespace Bovoyage3.Controllers
         private Bovoyage3DbContext db = new Bovoyage3DbContext();
 
         // GET: api/Participants
+        /// <summary>
+        /// Retourne la liste des Participants
+        /// </summary>    
         public IQueryable<Participant> GetParticipants()
         {
             return db.Participants;
         }
-
+ 
         // GET: api/Participants/5
         [ResponseType(typeof(Participant))]
         public IHttpActionResult GetParticipant(int id)

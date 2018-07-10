@@ -11,6 +11,8 @@ namespace Bovoyage3.Models
     public class Client : Personne
     {
         public string Email { get; set; }
-        
+
+        [ForeignKey("PersonneId")]
+        public Personne Personne { get; set; }
     }
 }
