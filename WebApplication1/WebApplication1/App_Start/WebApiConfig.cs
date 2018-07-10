@@ -9,7 +9,7 @@ namespace WebApplication1
     {
         public static void Register(HttpConfiguration config)
         {
-            // Configuration et services API We
+            // Configuration et services API Web
 
             // Itinéraires de l'API Web
             config.MapHttpAttributeRoutes();
