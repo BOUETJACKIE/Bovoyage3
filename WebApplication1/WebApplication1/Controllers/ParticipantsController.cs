@@ -36,6 +36,18 @@ namespace Bovoyage3.Controllers
             return Ok(participant);
         }
 
+        /// <summary>
+        /// Ajoute un participant dans la base. Le nom est obligatoire
+        /// </summary>
+        /// <param nom="participant"></param>
+        /// <returns></returns>
+        [Route("{nom}")]
+        [ResponseType(typeof(Participant))]
+        public IQueryable<Participant> GetParticipants(string nom)
+        {
+            return db.Participants.Where(x => x.Nom.Contains(nom));
+        }
+
         // PUT: api/Participants/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutParticipant(int id, Participant participant)

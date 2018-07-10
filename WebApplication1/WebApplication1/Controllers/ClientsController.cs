@@ -37,12 +37,17 @@ namespace Bovoyage3.Controllers
             return Ok(client);
         }
 
-        /*[Route("{name}")]
+        /// <summary>
+        /// Ajoute un client dans la base. Le nom est obligatoire
+        /// </summary>
+        /// <param nom="client"></param>
+        /// <returns></returns>
+        [Route("{nom}")]
         [ResponseType(typeof(Client))]
-        public IQueryable<Client> GetClients(string name)
+        public IQueryable<Client> GetClients(string nom)
         {
-            return db.Clients.Where(x => !x.Deleted && x.Nom.Contains(name));
-        }*/
+            return db.Clients.Where(x => x.Nom.Contains(nom));
+        }
 
 
         // PUT: api/Clients/5
@@ -80,6 +85,11 @@ namespace Bovoyage3.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        /// <summary>
+        /// Ajoute un client dans la base. Le nom est obligatoire
+        /// </summary>
+        /// <param name="client"></param>
+        /// <returns></returns>
         // POST: api/Clients
         [ResponseType(typeof(Client))]
         public IHttpActionResult PostClient(Client client)
