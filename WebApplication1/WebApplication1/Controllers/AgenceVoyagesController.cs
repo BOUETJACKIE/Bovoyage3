@@ -39,6 +39,21 @@ namespace Bovoyage3.Controllers
             return Ok(agenceVoyage);
         }
 
+        [Route("api/agences/search")]
+        public IQueryable<AgenceVoyage> GetSearch(string Nom = "",string Telephone="")
+        {
+            var query = db.AgenceVoyages.Where(x => !x.Deleted);
+
+            if (!string.IsNullOrWhiteSpace(Nom))
+                query = query.Where(x => x.Nom.Contains(Nom));
+
+            if (!string.IsNullOrWhiteSpace(Telephone))
+                query = query.Where(x => x.Telephone.Contains(Telephone));
+
+            
+
+            return query;
+        }
         // PUT: api/AgenceVoyages/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutAgenceVoyage(int id, AgenceVoyage agenceVoyage)
@@ -91,18 +106,22 @@ namespace Bovoyage3.Controllers
 
         // DELETE: api/AgenceVoyages/5
         [ResponseType(typeof(AgenceVoyage))]
-        public IHttpActionResult DeleteAgenceVoyage(int id)
+        public IHttpActionResult DeleteVoyage(int id)
         {
-            AgenceVoyage agenceVoyage = db.AgenceVoyages.Find(id);
-            if (agenceVoyage == null)
+            AgenceVoyage agencevoyage = db.AgenceVoyages.Find(id);
+            if (agencevoyage == null)
             {
                 return NotFound();
             }
 
-            db.AgenceVoyages.Remove(agenceVoyage);
+
+            agencevoyage.Deleted = true;
+            agencevoyage.DeletedAt = DateTime.Now;
+
+            db.Entry(agencevoyage).State = EntityState.Modified;
             db.SaveChanges();
 
-            return Ok(agenceVoyage);
+            return Ok(agencevoyage);
         }
 
         protected override void Dispose(bool disposing)
