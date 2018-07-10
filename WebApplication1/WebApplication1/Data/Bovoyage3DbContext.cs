@@ -26,5 +26,6 @@ namespace Bovoyage3.Data
 
         public DbSet<Voyage> Voyages { get; set; }
 
+        public System.Data.Entity.DbSet<Bovoyage3.Models.Personne> Personnes { get; set; }
     }
 }
