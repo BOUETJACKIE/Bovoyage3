@@ -12,16 +12,19 @@ namespace Bovoyage3.Models
     {
         public int Id { get; set; }
 
-        [ForeignKey("Voyage")]
-        public virtual Voyage Voyage { get; set; }
+        [ForeignKey("IdVoyage")]
+        public  Voyage Voyage { get; set; }
+
         public int IdVoyage { get; set; }
 
         [ForeignKey("IdAgence")]
-        public virtual AgenceVoyage Agence { get; set; }
+        public  AgenceVoyage Agence { get; set; }
+
         public int IdAgence { get; set; }
 
         [ForeignKey("IdClient")]
-        public virtual Client Client { get; set; }
+        public  Client Client { get; set; }
+
         public int IdClient { get; set; }
 
         public string NumeroCarteBancaire { get; set; }

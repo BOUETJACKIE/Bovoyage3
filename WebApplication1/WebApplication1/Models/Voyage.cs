@@ -12,11 +12,12 @@ namespace Bovoyage3.Models
         public int Id { get; set; }
 
         [ForeignKey("IdAgence")]
-        public virtual AgenceVoyage Agence { get; set; }
+        public AgenceVoyage Agence { get; set; }
         public int IdAgence { get; set; }
 
         [ForeignKey("IdDestination")]
-        public virtual Destination Destination { get; set; }
+        public Destination Destination { get; set; }
+
         public int IdDestination { get; set; }
 
         public DateTime DateAller { get; set; }
