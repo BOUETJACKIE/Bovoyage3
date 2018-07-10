@@ -9,7 +9,7 @@ namespace Bovoyage3.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
     }
 }

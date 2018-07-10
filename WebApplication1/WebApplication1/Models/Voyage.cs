@@ -13,6 +13,7 @@ namespace Bovoyage3.Models
 
         [ForeignKey("IdAgence")]
         public AgenceVoyage Agence { get; set; }
+
         public int IdAgence { get; set; }
 
         [ForeignKey("IdDestination")]
