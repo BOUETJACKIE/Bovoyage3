@@ -26,6 +26,7 @@ namespace Bovoyage3.Controllers
         // GET: api/Clients/5
         [ResponseType(typeof(Client))]
         public IHttpActionResult GetClient(int id)
+
         {
             Client client = db.Clients.Find(id);
             if (client == null)
@@ -35,6 +36,14 @@ namespace Bovoyage3.Controllers
 
             return Ok(client);
         }
+
+        [Route("{name}")]
+        [ResponseType(typeof(Client))]
+        public IQueryable<Client> GetClients(string name)
+        {
+            return db.Clients.Where(x => !x.Deleted && x.Name.Contains(name));
+        }
+
 
         // PUT: api/Clients/5
         [ResponseType(typeof(void))]

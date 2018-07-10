@@ -24,8 +24,6 @@ namespace Bovoyage3.Data
 
         public DbSet<Voyage> Voyages { get; set; }
 
-
-
         public DbSet<AssuranceAnulation> AssuranceAnulations { get; set; }
     }
 }
