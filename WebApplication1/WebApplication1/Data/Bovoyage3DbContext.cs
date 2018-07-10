@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using WebApplication1.Models;
+
 
 namespace Bovoyage3.Data
 {
@@ -27,5 +27,7 @@ namespace Bovoyage3.Data
         public DbSet<Voyage> Voyages { get; set; }
 
         public System.Data.Entity.DbSet<Bovoyage3.Models.Personne> Personnes { get; set; }
+
+        public System.Data.Entity.DbSet<Bovoyage3.Models.AssuranceAnulation> AssuranceAnulations { get; set; }
     }
 }
