@@ -12,7 +12,7 @@ namespace Bovoyage3.Models
     {
         public string Email { get; set; }
 
-        [ForeignKey("PersonneId")]
-        public Personne Personne { get; set; }
+      //  [ForeignKey("PersonneId")]
+        //public Personne Personne { get; set; }
     }
 }

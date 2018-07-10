@@ -64,13 +64,13 @@ namespace Bovoyage3.Controllers
                 return NotFound();
             }
 
-            if (personneId != null)
+           /* if (personneId != null)
                 query = query.Where(x => x.Personne.Id == personneId);
             if (personneId == null)
             {
                 return BadRequest();
             }
-
+            */
             var query2 = db.Clients.Where(x => !x.Deleted);
             if (!string.IsNullOrWhiteSpace(telephone))
                 query = query.Where(x => x.Telephone.Contains(telephone));

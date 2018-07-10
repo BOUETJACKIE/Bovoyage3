@@ -151,6 +151,10 @@
     <Compile Include="Migrations\201807101231508_Premiere.Designer.cs">
       <DependentUpon>201807101231508_Premiere.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807101625329_cratedcrud.cs" />
+    <Compile Include="Migrations\201807101625329_cratedcrud.Designer.cs">
+      <DependentUpon>201807101625329_cratedcrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgenceVoyage.cs" />
     <Compile Include="Models\Assurance.cs" />
@@ -197,6 +201,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807101231508_Premiere.resx">
       <DependentUpon>201807101231508_Premiere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807101625329_cratedcrud.resx">
+      <DependentUpon>201807101625329_cratedcrud.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
