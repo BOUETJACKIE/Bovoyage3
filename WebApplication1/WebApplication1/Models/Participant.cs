@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebApplication1.Models
 {
-    public class Participant
+    public class Participant : Personne
     {
         public int NumeroUnique { get; set; }
         public float Reduction { get; set; }
