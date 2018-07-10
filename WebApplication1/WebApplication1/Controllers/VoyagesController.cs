@@ -20,7 +20,7 @@ namespace Bovoyage3.Controllers
         // GET: api/Voyages
         public IQueryable<Voyage> GetVoyages()
         {
-            return db.Voyages;
+            return db.Voyages.Include(x=>x.Destination).Where(x=>!x.Deleted);
         }
 
         // GET: api/Voyages/5

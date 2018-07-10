@@ -37,12 +37,12 @@ namespace Bovoyage3.Controllers
             return Ok(client);
         }
 
-        [Route("{name}")]
+        /*[Route("{name}")]
         [ResponseType(typeof(Client))]
         public IQueryable<Client> GetClients(string name)
         {
-            return db.Clients.Where(x => !x.Deleted && x.Name.Contains(name));
-        }
+            return db.Clients.Where(x => !x.Deleted && x.Nom.Contains(name));
+        }*/
 
 
         // PUT: api/Clients/5

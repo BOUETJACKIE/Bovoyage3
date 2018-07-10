@@ -17,5 +17,7 @@ namespace Bovoyage3.Models
         public bool Deleted { get; set; }
 
         public DateTime? DeletedAt { get; set; }
+
+       
     }
 }
