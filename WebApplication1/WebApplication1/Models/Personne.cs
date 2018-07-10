@@ -17,5 +17,10 @@ namespace Bovoyage3.Models
         public string Telephone { get; set; }
         public DateTime DateNaissance { get; set; }
         public int Age { get; set; }
+
+        public override string ToString()
+        {
+            return $"{this.Nom} ({this.Id})";
+        }
     }
 }

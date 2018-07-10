@@ -19,5 +19,6 @@ namespace Bovoyage3.Models
         public string Pays { get; set; }
         public string Region { get; set; }
         public string description { get; set; }
+
     }
 }

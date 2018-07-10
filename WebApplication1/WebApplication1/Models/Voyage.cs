@@ -9,12 +9,30 @@ namespace Bovoyage3.Models
     [Table("Voyages")]
     public class Voyage
     {
-        public DateTime dateAller { get; set; }
-        public DateTime dateRetour { get; set; }
-        public int placesDisponibles { get; set; }
-        public decimal tarifToutCompris { get; set; }
+        public int Id { get; set; }
 
-        public void Reserver() { }
-            
+        [ForeignKey("IdAgence")]
+        public virtual AgenceVoyage Agence { get; set; }
+        public int IdAgence { get; set; }
+
+        [ForeignKey("IdDestination")]
+        public virtual Destination Destination { get; set; }
+        public int IdDestination { get; set; }
+
+        public DateTime DateAller { get; set; }
+
+        public DateTime DateRetour { get; set; }
+
+        public int PlacesDispo { get; set; }
+
+        public Decimal TarifToutCompris { get; set; }
+
+
+        public void Reserver(int places)
+        {
+
+        }
+
+
     }
 }

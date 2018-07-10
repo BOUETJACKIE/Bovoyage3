@@ -10,6 +10,8 @@ namespace Bovoyage3.Models
     public class Participant : Personne
     {
         public int NumeroUnique { get; set; }
-        public float Reduction { get; set; }
+        public int AgeNaissance { get { return DateTime.Today.Year - DateNaissance.Year; } }
+
+        public double Reduction { get; set; }
     }
 }
