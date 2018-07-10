@@ -67,14 +67,30 @@ namespace Bovoyage3.Controllers
                 return NotFound();
             }
 
+            if (destination.Id != destination.Id)
+            {
+                return BadRequest();
+            }
+
             if (!string.IsNullOrWhiteSpace(pays))
                 query = query.Where(x => x.Pays.Contains(pays));
-
+            if (pays == null)
+            {
+                return NotFound();
+            }
             if (!string.IsNullOrWhiteSpace(region))
                 query = query.Where(x => x.Region.Contains(region));
+            if(region == null)
+            {
+                return NotFound();
+            }
 
             if (!string.IsNullOrWhiteSpace(description))
                 query = query.Where(x => x.Description.Contains(description));
+            if (description == null)
+            {
+                return NotFound();
+            }
 
             return Ok();
         }
