@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Bovoyage3.Models
+namespace WebApplication1.Models
 {
-    public class AgenceVoyage
+    public class Assurance
     {
-        public string Nom { get; set; }
+
     }
 }
