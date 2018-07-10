@@ -12,13 +12,13 @@ namespace Bovoyage3.Models
 
     [Table("Destinations")]
 
-    public class Destination
+    public class Destination : BaseModel
     {
         public int Id { get; set; }
         public string Continent { get; set; }
         public string Pays { get; set; }
         public string Region { get; set; }
-        public string description { get; set; }
+        public string Description { get; set; }
 
     }
 }

@@ -17,7 +17,10 @@ namespace Bovoyage3.Controllers
     {
         private Bovoyage3DbContext db = new Bovoyage3DbContext();
 
-        // GET: api/Clients
+        // GET: api/Clients   
+        /// <summary>
+        /// Retourne la liste des Clients
+        /// </summary>    
         public IQueryable<Client> GetClients()
         {
             return db.Clients;
@@ -49,7 +52,35 @@ namespace Bovoyage3.Controllers
             return db.Clients.Where(x => x.Nom.Contains(nom));
         }
 
+        // GET: api/Clients/search
+        [Route("api/clients/search")]
+        public IHttpActionResult GetSearch(string nom = "", int? personneId = null, string telephone ="")
+        {
+            var query = db.Clients.Where(x => !x.Deleted);
+            if (!string.IsNullOrWhiteSpace(nom))
+                query = query.Where(x => x.Nom.Contains(nom));
+            if(nom == null)
+            {
+                return NotFound();
+            }
 
+            if (personneId != null)
+                query = query.Where(x => x.Personne.Id == personneId);
+            if (personneId == null)
+            {
+                return BadRequest();
+            }
+
+            var query2 = db.Clients.Where(x => !x.Deleted);
+            if (!string.IsNullOrWhiteSpace(telephone))
+                query = query.Where(x => x.Telephone.Contains(telephone));
+            if(telephone == null)
+            {
+                return NotFound();
+            }
+
+            return Ok();
+        }
         // PUT: api/Clients/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutClient(int id, Client client)

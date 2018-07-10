@@ -8,9 +8,6 @@ namespace Bovoyage3.Models
 {
     public abstract class BaseModel
     {
-        //[Key]
-        public int ID { get; set; }
-
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime CreatedAt { get; set; }
 

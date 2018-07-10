@@ -18,6 +18,10 @@ namespace Bovoyage3.Controllers
         private Bovoyage3DbContext db = new Bovoyage3DbContext();
 
         // GET: api/DossierReservations
+        // GET: api/Participants
+        /// <summary>
+        /// Retourne la liste des Dossiers de Réservations
+        /// </summary>    
         public IQueryable<DossierReservation> GetDossierReservations()
         {
             return db.DossierReservations;

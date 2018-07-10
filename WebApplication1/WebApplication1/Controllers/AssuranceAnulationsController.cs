@@ -18,6 +18,9 @@ namespace Bovoyage3.Controllers
         private Bovoyage3DbContext db = new Bovoyage3DbContext();
 
         // GET: api/AssuranceAnulations
+        /// <summary>
+        /// Retourne la liste des Assurances
+        /// </summary>    
         public IQueryable<AssuranceAnulation> GetAssuranceAnulations()
         {
             return db.AssuranceAnulations;
