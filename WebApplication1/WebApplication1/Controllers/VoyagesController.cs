@@ -35,7 +35,24 @@ namespace Bovoyage3.Controllers
 
             return Ok(voyage);
         }
+        [Route("api/voyages/search")]
+        public IQueryable<Voyage> GetSearch(DateTime? DateAller= null, DateTime? DateRetour= null, int? PlaceDispo= null, decimal? TarifToutCompris= null )
+        {
+            var query = db.Voyages.Where(x => !x.Deleted);
 
+            if (TarifToutCompris != null)
+                query = query.Where(x => x.TarifToutCompris != 0);
+            if (DateAller != null)
+                query = query.Where(x => x.DateAller > DateTime.Now);
+
+            if (DateRetour != null)
+                query = query.Where(x => x.DateRetour> DateTime.Now);
+
+            if (PlaceDispo != null)
+                query = query.Where(x => x. PlacesDispo != 0);
+
+            return query;
+        }
         // PUT: api/Voyages/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutVoyage(int id, Voyage voyage)
@@ -87,6 +104,7 @@ namespace Bovoyage3.Controllers
         }
 
         // DELETE: api/Voyages/5
+
         [ResponseType(typeof(Voyage))]
         public IHttpActionResult DeleteVoyage(int id)
         {
@@ -96,11 +114,18 @@ namespace Bovoyage3.Controllers
                 return NotFound();
             }
 
-            db.Voyages.Remove(voyage);
+            
+            voyage.Deleted = true;
+            voyage.DeletedAt = DateTime.Now;
+
+            db.Entry(voyage).State = EntityState.Modified;
             db.SaveChanges();
 
             return Ok(voyage);
         }
+
+
+       
 
         protected override void Dispose(bool disposing)
         {
