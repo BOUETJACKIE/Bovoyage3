@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
-using WebApplication1.Models;
+using Bovoyage3.Models;
 
 namespace Bovoyage3.Models
 {
