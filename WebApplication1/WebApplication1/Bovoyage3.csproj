@@ -96,6 +96,7 @@
     <Content Include="Controllers\Content\bootstrap.css" />
     <Content Include="Controllers\Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="HTML\PageAccueil.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
