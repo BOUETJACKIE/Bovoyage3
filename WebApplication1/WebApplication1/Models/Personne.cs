@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebApplication1.Models
 {
-    public class Personne
+    public abstract class Personne
     {
         public string Civilite { get; set; }
         public string Nom { get; set; }
