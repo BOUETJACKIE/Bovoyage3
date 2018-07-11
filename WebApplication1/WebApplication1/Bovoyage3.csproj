@@ -215,6 +215,10 @@
     <Compile Include="Migrations\201807111418385_instswaggr.Designer.cs">
       <DependentUpon>201807111418385_instswaggr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807111610430_Modif table personne.cs" />
+    <Compile Include="Migrations\201807111610430_Modif table personne.Designer.cs">
+      <DependentUpon>201807111610430_Modif table personne.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgenceVoyage.cs" />
     <Compile Include="Models\Assurance.cs" />
@@ -290,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807111418385_instswaggr.resx">
       <DependentUpon>201807111418385_instswaggr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807111610430_Modif table personne.resx">
+      <DependentUpon>201807111610430_Modif table personne.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
