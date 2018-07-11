@@ -104,9 +104,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CSS\Menu.css" />
     <Content Include="Global.asax" />
-    <Content Include="HTML\CréerClient.html" />
-    <Content Include="HTML\CréerParticipant.html" />
-    <Content Include="HTML\CréerVoyage.html" />
+    <Content Include="HTML\CreerClient.html" />
+    <Content Include="HTML\CreerParticipant.html" />
+    <Content Include="HTML\CreerVoyage.html" />
     <Content Include="HTML\ListerClient.html" />
     <Content Include="HTML\ListerParticipant.html" />
     <Content Include="HTML\ListerVoyage.html" />

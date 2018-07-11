@@ -29,7 +29,7 @@
 
             $.get("http://localhost:58284/api/Destinations",
                 function (listeDestination) {
-                for (let destination of listeDestinations) {
+                for (let destination of listeDestination) {
                     $("#Table1").append(`<tr><td>${destination.Continent}</td><td>${destination.Pays}</td><td>${destination.Region}</td><td>${destination.Description}</td>`);
                 }
             });

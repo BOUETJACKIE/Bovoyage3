@@ -13,6 +13,7 @@ using Bovoyage3.Models;
 
 namespace Bovoyage3.Controllers
 {
+    [RoutePrefix("api/clients")]
     public class ClientsController : ApiController
     {
         private Bovoyage3DbContext db = new Bovoyage3DbContext();
@@ -20,13 +21,15 @@ namespace Bovoyage3.Controllers
         // GET: api/Clients   
         /// <summary>
         /// Retourne la liste des Clients
-        /// </summary>    
+        /// </summary>   
+        [Route("")]
         public IQueryable<Client> GetClients()
         {
             return db.Clients;
         }
 
         // GET: api/Clients/5
+        [Route("{id:int}")]
         [ResponseType(typeof(Client))]
         public IHttpActionResult GetClient(int id)
 
@@ -53,7 +56,7 @@ namespace Bovoyage3.Controllers
         }
 
         // GET: api/Clients/search
-        [Route("api/clients/search")]
+        [Route("search")]
         public IHttpActionResult GetSearch(string nom = "", int? personneId = null, string telephone ="")
         {
             var query = db.Clients.Where(x => !x.Deleted);
@@ -122,6 +125,7 @@ namespace Bovoyage3.Controllers
         /// <param name="client"></param>
         /// <returns></returns>
         // POST: api/Clients
+        [Route("")]
         [ResponseType(typeof(Client))]
         public IHttpActionResult PostClient(Client client)
         {
