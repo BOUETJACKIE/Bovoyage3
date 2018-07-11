@@ -191,6 +191,18 @@
     <Compile Include="Migrations\201807111012326_CreaDbAss.Designer.cs">
       <DependentUpon>201807111012326_CreaDbAss.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807111021458_modiftabPartcipants.cs" />
+    <Compile Include="Migrations\201807111021458_modiftabPartcipants.Designer.cs">
+      <DependentUpon>201807111021458_modiftabPartcipants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807111042258_CreaBdClient.cs" />
+    <Compile Include="Migrations\201807111042258_CreaBdClient.Designer.cs">
+      <DependentUpon>201807111042258_CreaBdClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807111053297_creadbParticipants.cs" />
+    <Compile Include="Migrations\201807111053297_creadbParticipants.Designer.cs">
+      <DependentUpon>201807111053297_creadbParticipants.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgenceVoyage.cs" />
     <Compile Include="Models\Assurance.cs" />
@@ -254,6 +266,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807111012326_CreaDbAss.resx">
       <DependentUpon>201807111012326_CreaDbAss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807111021458_modiftabPartcipants.resx">
+      <DependentUpon>201807111021458_modiftabPartcipants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807111042258_CreaBdClient.resx">
+      <DependentUpon>201807111042258_CreaBdClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807111053297_creadbParticipants.resx">
+      <DependentUpon>201807111053297_creadbParticipants.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
