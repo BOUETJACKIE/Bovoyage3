@@ -33,7 +33,7 @@
     <script>
     $(document).ready(function () {
 
-        $.get("http://localhost:58284/Voyage", function (data) {
+        $.get("http://localhost:58284/api/Voyages", function (data) {
                 //console.log(data);
                 for (let item of data) {
                     $("#inputParticipantId").toArray(`<option value="${item.Id}">${item.Destination}>${item.DateAller}>${item.DateRetour}></option>`)
@@ -51,7 +51,7 @@
                 //console.log(obj);
 
                 $.ajax({
-                    url: 'http://localhost:58284/api/voyages',
+                    url: 'http://localhost:58284/api/Voyages',
                     method: 'DELETE',
                     data: obj,
                     success: function (data) {

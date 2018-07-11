@@ -33,7 +33,7 @@
     <script>
     $(document).ready(function () {
 
-        $.get("http://localhost:58284/Participant", function (data) {
+        $.get("http://localhost:58284/api/Participants", function (data) {
                 //console.log(data);
                 for (let item of data) {
                     $("#inputParticipantId").toArray(`<option value="${item.Id}">${item.Nom}>${item.Prenom}>${item.DateNaissance}></option>`)
@@ -51,7 +51,7 @@
                 //console.log(obj);
 
                 $.ajax({
-                    url: 'http://localhost:58284/api/participants',
+                    url: 'http://localhost:58284/api/Participants',
                     method: 'DELETE',
                     data: obj,
                     success: function (data) {

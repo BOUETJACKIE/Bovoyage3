@@ -62,7 +62,7 @@
     <script>
         $(document).ready(function () {
 
-            $.get("http://localhost:58284/Voyage", function (data) {
+            $.get("http://localhost:58284/api/Voyages", function (data) {
                 //console.log(data);
                 for (let item of data) {
                     $("#inputVoyageId").append(`<option value="${item.Id}">${item.DateAller}>${item.Destination}>${item.DateRetour}>${item.PlacesDispo}>${item.TarifToutCompris}></option>`)
@@ -86,7 +86,7 @@
                 //console.log(obj);
 
                 $.ajax({
-                    url: 'http://localhost:58284/api/voyages' + $("#inputId").val(),
+                    url: 'http://localhost:58284/api/Voyages' + $("#inputId").val(),
                     method: 'PUT',
                     data: obj,
                     success: function (data) {

@@ -69,7 +69,7 @@
     <script>
         $(document).ready(function () {
 
-            $.get("http://localhost:58284/Participant", function (data) {
+            $.get("http://localhost:58284/api/Participant", function (data) {
                 //console.log(data);
                 for (let item of data) {
                     $("#inputParticipantId").append(`<option value="${item.Id}">${item.Nom}>${item.Prenom}>${item.DateNaissance}>${item.Adresse}>${item.Reduction}>${item.Telephone}></option>`)
@@ -92,7 +92,7 @@
                 //console.log(obj);
 
                 $.ajax({
-                    url: 'http://localhost:58284/api/participants' + $("#inputId").val(),
+                    url: 'http://localhost:58284/api/Participants' + $("#inputId").val(),
                     method: 'PUT',
                     data: obj,
                     success: function (data) {
