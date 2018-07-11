@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bovoyage3.Models
 {
     [Table("Assurances")]
-    public class Assurance
+    public class Assurance: BaseModel
     {
         public int Id { get; set; }
 

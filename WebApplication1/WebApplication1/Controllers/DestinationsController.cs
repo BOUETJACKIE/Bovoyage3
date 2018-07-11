@@ -155,7 +155,11 @@ namespace Bovoyage3.Controllers
                 return NotFound();
             }
 
-            db.Destinations.Remove(destination);
+
+            destination.Deleted = true;
+            destination.DeletedAt = DateTime.Now;
+
+            db.Entry(destination).State = EntityState.Modified;
             db.SaveChanges();
 
             return Ok(destination);

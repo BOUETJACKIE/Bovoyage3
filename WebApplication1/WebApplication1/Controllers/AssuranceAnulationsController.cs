@@ -91,15 +91,19 @@ namespace Bovoyage3.Controllers
 
         // DELETE: api/AssuranceAnulations/5
         [ResponseType(typeof(AssuranceAnulation))]
-        public IHttpActionResult DeleteAssuranceAnulation(int id)
+        public IHttpActionResult DeleteAssuranceAnnulation(int id)
         {
-            AssuranceAnulation assuranceAnulation = db.AssuranceAnulations.Find(id);
+            AssuranceAnulation assuranceAnulation  = db.AssuranceAnulations.Find(id);
             if (assuranceAnulation == null)
             {
                 return NotFound();
             }
 
-            db.AssuranceAnulations.Remove(assuranceAnulation);
+
+            assuranceAnulation.Deleted = true;
+            assuranceAnulation.DeletedAt = DateTime.Now;
+
+            db.Entry(assuranceAnulation).State = EntityState.Modified;
             db.SaveChanges();
 
             return Ok(assuranceAnulation);
