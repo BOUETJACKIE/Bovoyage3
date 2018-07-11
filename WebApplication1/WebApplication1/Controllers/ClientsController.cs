@@ -31,7 +31,7 @@ namespace Bovoyage3.Controllers
         // GET: api/Clients/5
         [Route("{id:int}")]
         [ResponseType(typeof(Client))]
-        public IHttpActionResult GetClient(int id)
+        public IHttpActionResult GetClients(int id)
 
         {
             Client client = db.Clients.Find(id);
@@ -61,7 +61,7 @@ namespace Bovoyage3.Controllers
         {
             var query = db.Clients.Where(x => !x.Deleted);
             if (!string.IsNullOrWhiteSpace(nom))
-                query = query.Where(x => x.Nom.Contains(nom));
+                query = query.Where(x => x.Nom==nom);
             if(nom == null)
             {
                 return NotFound();
@@ -76,7 +76,7 @@ namespace Bovoyage3.Controllers
             */
             var query2 = db.Clients.Where(x => !x.Deleted);
             if (!string.IsNullOrWhiteSpace(telephone))
-                query = query.Where(x => x.Telephone.Contains(telephone));
+                query = query.Where(x => x.Telephone==telephone);
             if(telephone == null)
             {
                 return NotFound();
