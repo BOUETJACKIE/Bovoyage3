@@ -26,14 +26,11 @@ namespace Bovoyage3.Models
 
         public string NumeroCarteBancaire { get; set; }
    
-        public EtatDossierReservation Etat { get; set; }
+       
 
         public decimal PrixTotal { get { return 0; } }
 
-        public void Annuler(RaisonAnnulationDossier raison)
-        {
-
-        }
+       
 
         public void ValiderSolvabilite()
         {

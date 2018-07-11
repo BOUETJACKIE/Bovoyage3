@@ -158,6 +158,14 @@
     <Compile Include="Migrations\201807101625329_cratedcrud.Designer.cs">
       <DependentUpon>201807101625329_cratedcrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807110809551_postagencevoyage.cs" />
+    <Compile Include="Migrations\201807110809551_postagencevoyage.Designer.cs">
+      <DependentUpon>201807110809551_postagencevoyage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807110839473_ModifDossierReservation.cs" />
+    <Compile Include="Migrations\201807110839473_ModifDossierReservation.Designer.cs">
+      <DependentUpon>201807110839473_ModifDossierReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgenceVoyage.cs" />
     <Compile Include="Models\Assurance.cs" />
@@ -207,6 +215,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807101625329_cratedcrud.resx">
       <DependentUpon>201807101625329_cratedcrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807110809551_postagencevoyage.resx">
+      <DependentUpon>201807110809551_postagencevoyage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807110839473_ModifDossierReservation.resx">
+      <DependentUpon>201807110839473_ModifDossierReservation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
