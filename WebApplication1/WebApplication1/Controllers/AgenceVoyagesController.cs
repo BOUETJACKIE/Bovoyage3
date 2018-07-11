@@ -13,6 +13,7 @@ using Bovoyage3.Models;
 
 namespace Bovoyage3.Controllers
 {
+    [RoutePrefix("api/agences")]
     public class AgenceVoyagesController : ApiController
     {
         private Bovoyage3DbContext db = new Bovoyage3DbContext();
@@ -20,7 +21,8 @@ namespace Bovoyage3.Controllers
         // GET: api/AgenceVoyages
         /// <summary>
         /// Retourne la liste des Agences de voyages
-        /// </summary>    
+        /// </summary>  
+        [Route("")]
         public IQueryable<AgenceVoyage> GetAgenceVoyages()
         {
             return db.AgenceVoyages;
@@ -32,6 +34,7 @@ namespace Bovoyage3.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Route("{id:int}")]
         [ResponseType(typeof(AgenceVoyage))]
         public IHttpActionResult GetAgenceVoyage(int id)
         {
@@ -49,7 +52,7 @@ namespace Bovoyage3.Controllers
         /// <param name="Nom"></param>
         /// <param name="Telephone"></param>
         /// <returns></returns>
-        [Route("api/agences/search")]
+        [Route("search")]
         public IQueryable<AgenceVoyage> GetSearch(string Nom = "",string Telephone="")
         {
             var query = db.AgenceVoyages.Where(x => !x.Deleted);
@@ -65,6 +68,7 @@ namespace Bovoyage3.Controllers
             return query;
         }
         // PUT: api/AgenceVoyages/5
+        [Route("{id:int}")]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutAgenceVoyage(int id, AgenceVoyage agenceVoyage)
         {
@@ -100,6 +104,7 @@ namespace Bovoyage3.Controllers
         }
 
         // POST: api/AgenceVoyages
+        [Route("")]
         [ResponseType(typeof(AgenceVoyage))]
         public IHttpActionResult PostAgenceVoyage(AgenceVoyage agenceVoyage)
         {
@@ -115,6 +120,7 @@ namespace Bovoyage3.Controllers
         }
 
         // DELETE: api/AgenceVoyages/5
+        [Route("{id:int}")]
         [ResponseType(typeof(AgenceVoyage))]
         public IHttpActionResult DeletedVoyage(int id)
         {

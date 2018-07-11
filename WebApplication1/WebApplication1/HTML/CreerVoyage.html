@@ -26,21 +26,19 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Destination</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputDestination">
+                            <select class="form-control" id="inputDestinationID"></select>
                         </div>
+
                     </div>
+
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">DestinationId</label>
+                        <label class="col-sm-2 control-label">Agence</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="inputDestinationId"></select>
+                            <select class="form-control" id="inputAgenceID"></select>
                         </div>
+
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">VoyageId</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" id="inputVoyageId"></select>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Places disponibles</label>
                         <div class="col-sm-10">
@@ -72,15 +70,21 @@
             $.get("http://localhost:58284/api/Destinations", function (data) {
                 //console.log(data);
                 for (let item of data) {
-                    $("#inputVoyageId").append(`<option value="${item.Id}">${item.DateAller}>${item.Destination}>${item.DestinationId}>${item.VoyageId}>${item.DateRetour}>${item.PlacesDispo}>${item.TarifToutCompris}></option>`)
+                    $("#inputDestinationID").append(`<option value="${item.ID}">${item.Continent} ${item.Pays} ${item.Region} ${item.description} </option>`)
                 }
             });
-
+            $.get("http://localhost:58284/api/Agences", function (data) {
+                //console.log(data);
+                for (let item of data) {
+                    $("#inputAgenceID").append(`<option value="${item.ID}">${item.Nom} ${item.Adresse} ${item.Telephone}</option>`)
+                }
+            });
 
             $("form").submit(function (ev) {
                 let obj = {
                     DateAller: $("#inputDateAller").val(),
-                    Destination:$("#inputDestination").val(),
+                    Destination: $("#inputDestinationID").val(),
+                    Agence:$('#inputAgenceID').val(),
                     DateRetour: $("#inputDateRetour").val(),
                     DateNaissance: $("#inputDateNaissance").val(),
                     PlacesDispo: $("#inputPlacesDispo").val(),
