@@ -5,12 +5,12 @@ using System.Web;
 
 namespace Bovoyage3.Models
 {
-    public enum CivilitePersonne : byte { Madame = 1, Monsieur, Mademoiselle }
+   
 
     public abstract class Personne : BaseModel
     {
         public int Id { get; set; }
-        public CivilitePersonne Civilite { get; set; }
+        public string Civilite { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Adresse { get; set; }
