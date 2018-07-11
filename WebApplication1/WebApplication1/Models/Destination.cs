@@ -6,10 +6,7 @@ using System.Web;
 
 namespace Bovoyage3.Models
 {
-    public enum EtatDossierReservation : byte { EnAttente, EnCours, Refusee, Acceptee }
-
-    public enum RaisonAnnulationDossier : byte { Client = 1, PlacesInsuffisantes }
-
+   
     [Table("Destinations")]
 
     public class Destination : BaseModel

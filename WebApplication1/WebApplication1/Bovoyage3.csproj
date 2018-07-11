@@ -165,6 +165,26 @@
     <Compile Include="Migrations\201807101625329_cratedcrud.Designer.cs">
       <DependentUpon>201807101625329_cratedcrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807110809551_postagencevoyage.cs" />
+    <Compile Include="Migrations\201807110809551_postagencevoyage.Designer.cs">
+      <DependentUpon>201807110809551_postagencevoyage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807110839473_ModifDossierReservation.cs" />
+    <Compile Include="Migrations\201807110839473_ModifDossierReservation.Designer.cs">
+      <DependentUpon>201807110839473_ModifDossierReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807110857396_dbDestinations.cs" />
+    <Compile Include="Migrations\201807110857396_dbDestinations.Designer.cs">
+      <DependentUpon>201807110857396_dbDestinations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807110958319_creabdvoyage.cs" />
+    <Compile Include="Migrations\201807110958319_creabdvoyage.Designer.cs">
+      <DependentUpon>201807110958319_creabdvoyage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807111012326_CreaDbAss.cs" />
+    <Compile Include="Migrations\201807111012326_CreaDbAss.Designer.cs">
+      <DependentUpon>201807111012326_CreaDbAss.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgenceVoyage.cs" />
     <Compile Include="Models\Assurance.cs" />
@@ -213,6 +233,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807101625329_cratedcrud.resx">
       <DependentUpon>201807101625329_cratedcrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807110809551_postagencevoyage.resx">
+      <DependentUpon>201807110809551_postagencevoyage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807110839473_ModifDossierReservation.resx">
+      <DependentUpon>201807110839473_ModifDossierReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807110857396_dbDestinations.resx">
+      <DependentUpon>201807110857396_dbDestinations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807110958319_creabdvoyage.resx">
+      <DependentUpon>201807110958319_creabdvoyage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807111012326_CreaDbAss.resx">
+      <DependentUpon>201807111012326_CreaDbAss.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
