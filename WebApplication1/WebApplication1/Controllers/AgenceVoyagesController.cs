@@ -27,6 +27,11 @@ namespace Bovoyage3.Controllers
         }
 
         // GET: api/AgenceVoyages/5
+        /// <summary>
+        /// recherche par l'id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [ResponseType(typeof(AgenceVoyage))]
         public IHttpActionResult GetAgenceVoyage(int id)
         {
@@ -38,17 +43,22 @@ namespace Bovoyage3.Controllers
 
             return Ok(agenceVoyage);
         }
-
+        /// <summary>
+        /// methode recherche par le nom ou le telephone
+        /// </summary>
+        /// <param name="Nom"></param>
+        /// <param name="Telephone"></param>
+        /// <returns></returns>
         [Route("api/agences/search")]
         public IQueryable<AgenceVoyage> GetSearch(string Nom = "",string Telephone="")
         {
             var query = db.AgenceVoyages.Where(x => !x.Deleted);
 
             if (!string.IsNullOrWhiteSpace(Nom))
-                query = query.Where(x => x.Nom.Contains(Nom));
+                query = query.Where(x => x.Nom==Nom);
 
             if (!string.IsNullOrWhiteSpace(Telephone))
-                query = query.Where(x => x.Telephone.Contains(Telephone));
+                query = query.Where(x => x.Telephone==Telephone);
 
             
 
@@ -106,7 +116,7 @@ namespace Bovoyage3.Controllers
 
         // DELETE: api/AgenceVoyages/5
         [ResponseType(typeof(AgenceVoyage))]
-        public IHttpActionResult DeleteVoyage(int id)
+        public IHttpActionResult DeletedVoyage(int id)
         {
             AgenceVoyage agencevoyage = db.AgenceVoyages.Find(id);
             if (agencevoyage == null)
