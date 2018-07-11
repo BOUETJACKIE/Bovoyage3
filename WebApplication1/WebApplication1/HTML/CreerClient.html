@@ -67,7 +67,7 @@
             crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script>
-    $(document).ready(function () {    
+        $(document).ready(function () {
 
             $("form").submit(function (ev) {
                 let obj = {
@@ -78,23 +78,23 @@
                     Adresse: $("#inputAdresse").val(),
                     Email: $("#inputEmail").val(),
                     Telephone: $("#inputTelephone").val(),
-                    
+
                 };
 
                 //console.log(obj);
 
                 $.ajax({
-                    url: 'http://localhost:58284/api/clients',
+                    url: 'http://localhost:58284/api/Clients',
                     method: 'POST',
                     data: obj,
                     success: function (data) {
                         alert(`Client enregistré avec l'Id ${data.Id}`);
                     }
-                });            
+                });
 
                 ev.preventDefault();
             });
-        });
-</script> 
+        });</script>
+
 </body>
 </html>

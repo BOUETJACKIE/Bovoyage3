@@ -87,6 +87,7 @@ namespace Bovoyage3.Controllers
         }
 
         // POST: api/Participants
+        [Route("")]
         [ResponseType(typeof(Participant))]
         public IHttpActionResult PostParticipant(Participant participant)
         {
