@@ -63,7 +63,7 @@
     <script>
     $(document).ready(function () {
 
-        $.get("http://localhost:58284/Client", function (data) {
+        $.get("http://localhost:58284/api/Clients", function (data) {
                 //console.log(data);
                 for (let item of data) {
                     $("#inputClientId").append(`<option value="${item.Id}">${item.Nom}>${item.Prenom}>${item.DateNaissance}>${item.Adresse}>${item.Email}>${item.Telephone}></option>`)
@@ -85,7 +85,7 @@
                 //console.log(obj);
 
                 $.ajax({
-                    url: 'http://localhost:58284/api/clients',
+                    url: 'http://localhost:58284/api/Clients',
                     method: 'POST',
                     data: obj,
                     success: function (data) {
