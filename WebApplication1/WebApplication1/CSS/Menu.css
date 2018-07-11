@@ -1,0 +1,10 @@
+﻿nav ul 
+{
+    list-style: none; /* enlever les puces */
+    margin: 0; /* enlever les marges automatiques */
+}
+nav ul li 
+{
+  display: inline-block; /* affichage en ligne */
+    
+}

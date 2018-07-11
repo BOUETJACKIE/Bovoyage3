@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Gestion Participants</h2>
+                <h2>Créer Participants</h2>
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Nom</label>
@@ -26,7 +26,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Date de naissance</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" id="input">
+                            <input type="date" class="form-control" id="inputDateNaissance">
                         </div>
                     </div>
                     <div class="form-group">
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Reduction(s)</label>
+                        <label class="col-sm-2 control-label">Reduction</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="inputReduction">
                         </div>
@@ -63,31 +63,33 @@
     <script>
         $(document).ready(function () {
 
-            $.get("http://localhost:63757/api/categories", function (data) {
+            $.get("http://localhost:58284/Participant", function (data) {
                 //console.log(data);
                 for (let item of data) {
-                    $("#inputCategoryID").append(`<option value="${item.ID}">${item.Name}</option>`)
+                    $("#inputParticipantID").append(`<option value="${item.ID}">${item.Nom}>${item.Prenom}>${item.DateNaissance}>${item.Adresse}>${item.Reduction}>${item.Telephone}></option>`)
                 }
             });
 
 
             $("form").submit(function (ev) {
                 let obj = {
-                    Name: $("#inputName").val(),
-                    Description: $("#inputDescription").val(),
-                    DeadLineDate: $("#inputDeadLine").val(),
-                    CategoryID: $("#inputCategoryID").val(),
-                    Done: $("#inputDone").is(':checked')
+                    Nom: $("#inputNom").val(),
+                    Prenom: $("#inputPrenom").val(),
+                    DateNaissance: $("#inputDateNaissance").val(),
+                    Adresse: $("#inputAdresse").val(),
+                    Reduction: $("#inputReduction").val(),
+                    Telephone: $("#inputTelephone").val(),
+
                 };
 
                 //console.log(obj);
 
                 $.ajax({
-                    url: 'http://localhost:63757/api/todos',
+                    url: 'http://localhost:58284/api/participants',
                     method: 'POST',
                     data: obj,
                     success: function (data) {
-                        alert(`Todo enregistré avec l'ID ${data.ID}`);
+                        alert(`Participant enregistré avec l'ID ${data.ID}`);
                     }
                 });
 
