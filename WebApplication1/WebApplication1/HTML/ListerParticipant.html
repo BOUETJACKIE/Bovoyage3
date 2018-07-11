@@ -1,10 +1,42 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<html>
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
 </head>
 <body>
+    <div class="container">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Date de Naissance</th>
+                    <th>Adresse</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
+                    <th>Reduction</th>
+                </tr>
+            </thead>
+            <tbody id="Table1">
+                <tr id="loadingStatus" style="color:blue"></tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
 
+            $.get("http://localhost:58284/api/Participants",
+                function (listeParticipant) {
+                for (let participant of listeParticipants) {
+                    $("#Table1").append(`<tr><td>${participant.Nom}</td><td>${participant.Prenom}</td><td>${participant.DateNaissance}</td><td>${participant.Adresse}</td><td>${participant.Email}</td><td>${participant.Telephone}</td><td>${participant.Reduction}</td>`);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

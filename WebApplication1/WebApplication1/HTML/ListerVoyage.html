@@ -13,12 +13,10 @@
                     <th>Pays</th>
                     <th>Région</th>
                     <th>Description</th>
-                    <th>Modifier</th>
-                    <th>Supprimer</th>
                 </tr>
             </thead>
-            <tbody id="myTable">
-                <tr id="loadingStatus" style="color:red"></tr>
+            <tbody id="Table1">
+                <tr id="loadingStatus" style="color:blue"></tr>
             </tbody>
         </table>
     </div>
@@ -31,12 +29,9 @@
 
             $.get("http://localhost:58284/api/Destinations",
                 function (listeDestination) {
-                for (let destination of listeDestination) {
-                    $("#myTable").append(`<tr><td>${destination.Continent}</td><td>${destination.Pays}</td><td>${destination.Region}</td><td>${destination.Description}</td>
-                  <td><button type="button" onclick="editDestination('${destination.ID}')" class="btn btn-warning btn-lg"></button></td>
-                  <td><button type="button" onclick="deleteDestination('${destination.ID}')" class="col-4 btn btn-danger btn-sm">&times;</button></td></tr>`);
+                for (let destination of listeDestinations) {
+                    $("#Table1").append(`<tr><td>${destination.Continent}</td><td>${destination.Pays}</td><td>${destination.Region}</td><td>${destination.Description}</td>`);
                 }
-
             });
         });
     </script>
