@@ -3,7 +3,7 @@ namespace Bovoyage3.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class creadbParticipants : DbMigration
+    public partial class CreadbParticipants : DbMigration
     {
         public override void Up()
         {

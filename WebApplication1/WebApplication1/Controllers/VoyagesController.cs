@@ -45,7 +45,7 @@ namespace Bovoyage3.Controllers
             var query = db.Voyages.Where(x => !x.Deleted);
 
             if (TarifToutCompris != null)
-                query = query.Where(x => x.TarifToutCompris != 0);
+                query = query.Where(x => x.TarifToutCompris == TarifToutCompris);
             if (DateAller != null)
                 query = query.Where(x => x.DateAller > DateTime.Now);
 
@@ -53,7 +53,7 @@ namespace Bovoyage3.Controllers
                 query = query.Where(x => x.DateRetour> DateTime.Now);
 
             if (PlaceDispo != null)
-                query = query.Where(x => x. PlacesDispo != 0);
+                query = query.Where(x => x. PlacesDispo == PlaceDispo);
 
             return query;
         }

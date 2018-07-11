@@ -146,12 +146,15 @@ namespace Bovoyage3.Controllers
                 return NotFound();
             }
 
-            db.Clients.Remove(client);
+
+            client.Deleted = true;
+            client.DeletedAt = DateTime.Now;
+
+            db.Entry(client).State = EntityState.Modified;
             db.SaveChanges();
 
             return Ok(client);
         }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)

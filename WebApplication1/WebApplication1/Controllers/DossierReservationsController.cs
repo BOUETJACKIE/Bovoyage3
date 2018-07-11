@@ -100,7 +100,11 @@ namespace Bovoyage3.Controllers
                 return NotFound();
             }
 
-            db.DossierReservations.Remove(dossierReservation);
+
+            dossierReservation.Deleted = true;
+            dossierReservation.DeletedAt = DateTime.Now;
+
+            db.Entry(dossierReservation).State = EntityState.Modified;
             db.SaveChanges();
 
             return Ok(dossierReservation);

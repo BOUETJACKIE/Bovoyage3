@@ -8,7 +8,7 @@ using Bovoyage3.Models;
 namespace Bovoyage3.Models
 {
     [Table("DossierReservation")]
-    public class DossierReservation
+    public class DossierReservation: BaseModel
     {
         public int Id { get; set; }
 
