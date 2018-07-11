@@ -174,6 +174,10 @@
     <Compile Include="Migrations\201807110958319_creabdvoyage.Designer.cs">
       <DependentUpon>201807110958319_creabdvoyage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807111012326_CreaDbAss.cs" />
+    <Compile Include="Migrations\201807111012326_CreaDbAss.Designer.cs">
+      <DependentUpon>201807111012326_CreaDbAss.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AgenceVoyage.cs" />
     <Compile Include="Models\Assurance.cs" />
@@ -235,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807110958319_creabdvoyage.resx">
       <DependentUpon>201807110958319_creabdvoyage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807111012326_CreaDbAss.resx">
+      <DependentUpon>201807111012326_CreaDbAss.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
