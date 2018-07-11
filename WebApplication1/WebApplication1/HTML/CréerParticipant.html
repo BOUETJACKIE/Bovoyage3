@@ -66,7 +66,7 @@
             $.get("http://localhost:58284/Participant", function (data) {
                 //console.log(data);
                 for (let item of data) {
-                    $("#inputParticipantID").append(`<option value="${item.ID}">${item.Nom}>${item.Prenom}>${item.DateNaissance}>${item.Adresse}>${item.Reduction}>${item.Telephone}></option>`)
+                    $("#inputParticipantId").append(`<option value="${item.Id}">${item.Nom}>${item.Prenom}>${item.DateNaissance}>${item.Adresse}>${item.Reduction}>${item.Telephone}></option>`)
                 }
             });
 
@@ -89,7 +89,7 @@
                     method: 'POST',
                     data: obj,
                     success: function (data) {
-                        alert(`Participant enregistré avec l'ID ${data.ID}`);
+                        alert(`Participant enregistré avec l'Id ${data.Id}`);
                     }
                 });
 

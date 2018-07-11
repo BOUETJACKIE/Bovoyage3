@@ -36,7 +36,7 @@
         $.get("http://localhost:58284/Voyage", function (data) {
                 //console.log(data);
                 for (let item of data) {
-                    $("#inputParticipantID").toArray(`<option value="${item.ID}">${item.Destination}>${item.DateAller}>${item.DateRetour}></option>`)
+                    $("#inputParticipantId").toArray(`<option value="${item.Id}">${item.Destination}>${item.DateAller}>${item.DateRetour}></option>`)
                 }
             });
 
@@ -55,7 +55,7 @@
                     method: 'DELETE',
                     data: obj,
                     success: function (data) {
-                        alert(`Voyage supprimé avec l'ID ${data.ID}`);
+                        alert(`Voyage supprimé`);
                     }
                 });
 

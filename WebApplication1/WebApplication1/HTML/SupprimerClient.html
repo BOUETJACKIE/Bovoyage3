@@ -36,7 +36,7 @@
         $.get("http://localhost:58284/Client", function (data) {
                 //console.log(data);
                 for (let item of data) {
-                    $("#inputClientID").toArray(`<option value="${item.ID}">${item.Nom}>${item.Prenom}>${item.DateNaissance}></option>`)
+                    $("#inputClientId").toArray(`<option value="${item.Id}">${item.Nom}>${item.Prenom}>${item.DateNaissance}></option>`)
                 }
             });
 
@@ -55,7 +55,7 @@
                     method: 'DELETE',
                     data: obj,
                     success: function (data) {
-                        alert(`Client supprimé avec l'ID ${data.ID}`);
+                        alert(`Client supprimé`);
                     }
                 });
 

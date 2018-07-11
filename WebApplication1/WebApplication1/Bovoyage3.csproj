@@ -100,10 +100,16 @@
     <Content Include="HTML\CréerClient.html" />
     <Content Include="HTML\CréerParticipant.html" />
     <Content Include="HTML\CréerVoyage.html" />
+    <Content Include="HTML\ListerClient.html" />
+    <Content Include="HTML\ListerParticipant.html" />
+    <Content Include="HTML\ListerVoyage.html" />
     <Content Include="HTML\MenuClient.html" />
     <Content Include="HTML\MenuBovoyage.html" />
     <Content Include="HTML\MenuParticipant.html" />
     <Content Include="HTML\MenuVoyage.html" />
+    <Content Include="HTML\ModifierClient.html" />
+    <Content Include="HTML\ModifierParticipant.html" />
+    <Content Include="HTML\ModifierVoyage.html" />
     <Content Include="HTML\SupprimerClient.html" />
     <Content Include="HTML\SupprimerParticipant.html" />
     <Content Include="HTML\SupprimerVoyage.html" />
