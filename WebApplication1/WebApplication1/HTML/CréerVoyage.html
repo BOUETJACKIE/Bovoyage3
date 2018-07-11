@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,42 +9,36 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Créer Participants</h2>
+                <h2>Créer Voyage</h2>
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Nom</label>
+                        <label class="col-sm-2 control-label">Date aller</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName">
+                            <input type="date" class="form-control" id="inputDateAller">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Prénom</label>
+                        <label class="col-sm-2 control-label">Date Retour</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputSurname">
+                            <input type="date" class="form-control" id="inputDateRetour">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Date de naissance</label>
+                        <label class="col-sm-2 control-label">Destination</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" id="inputDateNaissance">
+                            <input type="text" class="form-control" id="inputDestination">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Adresse</label>
+                        <label class="col-sm-2 control-label">Places disponibles</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputAdresse">
+                            <input type="text" class="form-control" id="inputPlacesDispo">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Reduction</label>
+                        <label class="col-sm-2 control-label">Tarif toutes taxes comprises </label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputReduction">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Téléphone</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputTéléphone">
+                            <input type="text" class="form-control" id="inputTarifToutCompris">
                         </div>
                     </div>
                     <div class="form-group">
@@ -63,33 +57,34 @@
     <script>
         $(document).ready(function () {
 
-            $.get("http://localhost:58284/Participant", function (data) {
+            $.get("http://localhost:58284/Voyage", function (data) {
                 //console.log(data);
                 for (let item of data) {
-                    $("#inputParticipantID").append(`<option value="${item.ID}">${item.Nom}>${item.Prenom}>${item.DateNaissance}>${item.Adresse}>${item.Reduction}>${item.Telephone}></option>`)
+                    $("#inputVoyageID").append(`<option value="${item.ID}">${item.DateAller}>${item.Destination}>${item.DateRetour}>${item.PlacesDispo}>${item.TarifToutCompris}></option>`)
                 }
             });
 
 
             $("form").submit(function (ev) {
                 let obj = {
-                    Nom: $("#inputNom").val(),
-                    Prenom: $("#inputPrenom").val(),
+                    DateAller: $("#inputDateAller").val(),
+                    Destination:$("#inputDestination").val(),
+                    DateRetour: $("#inputDateRetour").val(),
                     DateNaissance: $("#inputDateNaissance").val(),
-                    Adresse: $("#inputAdresse").val(),
+                    PlacesDispo: $("#inputPlacesDispo").val(),
                     Reduction: $("#inputReduction").val(),
-                    Telephone: $("#inputTelephone").val(),
+                    TarifToutCompris: $("#inputTarifToutCompris").val(),
 
                 };
 
                 //console.log(obj);
 
                 $.ajax({
-                    url: 'http://localhost:58284/api/participants',
+                    url: 'http://localhost:58284/api/voyages',
                     method: 'POST',
                     data: obj,
                     success: function (data) {
-                        alert(`Participant enregistré avec l'ID ${data.ID}`);
+                        alert(`Voyage enregistré avec l'ID ${data.ID}`);
                     }
                 });
 

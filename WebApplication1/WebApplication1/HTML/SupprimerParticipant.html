@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Supprimer Participant</h2>
+                <form class="form-horizontal" role="form">
+                    <div class="search-control">
+                        <input type="search" id="" name="q"
+                               placeholder="Saisir le nom du participant..."
+                               aria-label="Search through site content">
+                        <button>Rechercher</button>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Supprimer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function () {
+
+        $.get("http://localhost:58284/Participant", function (data) {
+                //console.log(data);
+                for (let item of data) {
+                    $("#inputParticipantID").toArray(`<option value="${item.ID}">${item.Nom}>${item.Prenom}>${item.DateNaissance}></option>`)
+                }
+            });
+
+
+            $("form").submit(function (ev) {
+                let obj = {
+                    Nom: $("#inputNom").val(),
+                    Prenom: $("#inputPrenom").val(),
+                    DateNaissance: $("#inputDateNaissance").val(),
+                };
+
+                //console.log(obj);
+
+                $.ajax({
+                    url: 'http://localhost:58284/api/participants',
+                    method: 'DELETE',
+                    data: obj,
+                    success: function (data) {
+                        alert(`Participant supprimé avec l'ID ${data.ID}`);
+                    }
+                });
+
+                ev.preventDefault();
+            });
+        });</script>
+</body>
+</html>
