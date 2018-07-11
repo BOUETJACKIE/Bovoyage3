@@ -32,7 +32,7 @@
 
             $.get("http://localhost:58284/api/Participants",
                 function (listeParticipant) {
-                for (let participant of listeParticipants) {
+                for (let participant of listeParticipant) {
                     $("#Table1").append(`<tr><td>${participant.Nom}</td><td>${participant.Prenom}</td><td>${participant.DateNaissance}</td><td>${participant.Adresse}</td><td>${participant.Email}</td><td>${participant.Telephone}</td><td>${participant.Reduction}</td>`);
                 }
             });

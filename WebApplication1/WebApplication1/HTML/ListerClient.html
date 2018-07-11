@@ -31,8 +31,8 @@
 
             $.get("http://localhost:58284/api/Clients",
                 function (listeClient) {
-                    for (let client of listeClients) {
-                        $("#Table1").append(`<tr><td>${client.Nom}/td > <td>${client.Prenom}</td> <td>${client.DateNaissance}</td> <td>${client.Adresse}</td> <td>${client.Email}</td> <td>${client.Telephone}</td>`);
+                for (let client of listeClient) {
+                    $("#Table1").append(`<tr><td>${client.Nom}</td><td>${client.Prenom}</td><td>${client.DateNaissance}</td><td>${client.Adresse}</td><td>${client.Email}</td><td>${client.Telephone}</td>`);
                 }
             });
         });
